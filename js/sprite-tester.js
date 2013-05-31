@@ -3,6 +3,7 @@ $(function(){
 
     var dom = {
         dragger: $("#dragger"),
+        filename: $("#filename"),
         animateButton: $("#animate"),
         frameCounter: $("#frame"),
         spriteContainers: $(".sprite-container"),
@@ -104,6 +105,7 @@ $(function(){
                 reader.onload = (function(theFile) {
                     return function(e) {
                       dom.sprite.css("background","url(" + e.target.result + ")");
+                      dom.filename.text(file.name);
                     };
                 })(file);
             } catch(ex)
