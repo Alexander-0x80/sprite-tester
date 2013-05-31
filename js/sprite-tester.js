@@ -14,6 +14,7 @@ $(function(){
         bigSwitch: $("#big-sprite-opt"),
         frames: $("#frames-count"),
         backgroundSwitch: $("#sprite-bg"),
+        animation: $("#anim-speed"),
         sprite: $(".sprite")
     },
     options = {
@@ -45,6 +46,7 @@ $(function(){
     dom.animateButton.on("click", onAnimate);
     dom.spriteSize.on("change", onSpriteSize);
     dom.backgroundSwitch.on("change",onBgChange);
+    dom.animation.on("change",onSpeedChange);
     dom.smallSwitch.on("click", function(){
         if ($(this).prop("checked")) {
             dom.smallSprite.show();
@@ -72,7 +74,7 @@ $(function(){
         if (glob.interval === null) {
             glob.interval = setInterval(function(){
                 pos = (pos >= options.frames * options.size) ? 0 : pos + options.size;
-                dom.smallSprite.css({"backgroundPosition": pos + "px"});
+                dom.smallSprite.css({"backgroundPosition": pos + "px 0"});
                 dom.bigSprite.css({"backgroundPosition": (pos/options.size) * options.bsize + "px"});
                 dom.frameCounter.text(pos/options.size);
             }, options.speed);
@@ -115,5 +117,9 @@ $(function(){
 
     function onBgChange(e) {
         dom.spriteContainers.css("background",$(this).val());
+    }
+
+    function onSpeedChange(e) {
+        options.speed = $(this).val();
     }
 });
