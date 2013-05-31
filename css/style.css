@@ -1,0 +1,81 @@
+body {
+    background-color: #DEDEDE;
+    font: 16px/1.75em Georgia,serif;
+    vertical-align: baseline;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container {
+    width: 70%;
+    height: 100%;
+    text-align:center;
+    border: 4px solid #7AC5CD;
+}
+
+#container h2 {
+    background: #7AC5CD;
+}
+
+.sprite {
+   background: url("../sprites/player_walk.png");
+}
+
+#small-container {
+    width:100%;
+    height:64px;
+}
+
+#small-sprite {
+    width: 12px;
+    height: 12px;
+}
+
+#big-container {
+    width:100%;
+    height: 512px;
+    padding-bottom: 5%;
+}
+
+#big-sprite {
+    width: 512px;
+    height: 512px;
+    background-size: cover !important;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+#controls {
+    margin-top: 2%;
+    width: 15%;
+    display:block;
+    position: absolute;
+    left:0; 
+    top: 0;
+}
+
+#controls > div {
+    width: 100%;
+}
+
+#controls input {
+    width: 35px;
+}
+
+#dragger {
+    width: 100%;
+    height: 200px;
+    margin-top: 5%;
+    background: #7AC5CD;
+    text-align: center;
+}
+
+.hover {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    border: 7px dashed #53868B;
+}
