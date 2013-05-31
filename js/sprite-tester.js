@@ -99,7 +99,13 @@ $(function(){
                     alert("Not an image file");
                     return;
                 }
-                dom.sprite.css("background","url(./sprites/" + file.name + ")");
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = (function(theFile) {
+                    return function(e) {
+                      dom.sprite.css("background","url(" + e.target.result + ")");
+                    };
+                })(file);
             } catch(ex)
                 { console.log(ex.message); }   
         }
